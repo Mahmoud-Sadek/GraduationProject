@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/activity_register_user"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundcard"
+    android:fitsSystemWindows="true">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin50">
+        <!--de.hdodenhof.circleimageview.Circle-->
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardElevation="19dp"
+            card_view:cardCornerRadius="20dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:background="@drawable/button_style"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/padding_24"
+                    android:paddingRight="@dimen/padding_24"
+                    android:paddingTop="80dp">
+
+                    <com.piotrek.customspinner.CustomSpinner
+                        android:id="@+id/specialty_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="10dp"
+                        android:entries="@array/specialty_array"
+                        android:spinnerMode="dialog">
+
+                    </com.piotrek.customspinner.CustomSpinner>
+
+                    <com.piotrek.customspinner.CustomSpinner
+                        android:id="@+id/sub_specialty_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="10dp"
+                        android:entries="@array/sub_specialty_array"
+                        android:spinnerMode="dialog"></com.piotrek.customspinner.CustomSpinner>
+
+                    <com.piotrek.customspinner.CustomSpinner
+                        android:id="@+id/male_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="10dp"
+                        android:entries="@array/male_array"
+                        android:spinnerMode="dialog">
+                    </com.piotrek.customspinner.CustomSpinner>
+
+                    <!--<android.support.design.widget.TextInputLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+
+                        <!--<EditText-->
+                            <!--android:id="@+id/txt_user_phone"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="20dp"-->
+                            <!--android:background="#0000"-->
+                            <!--android:drawableLeft="@drawable/user"-->
+                            <!--android:hint="@string/hint_phone2"-->
+                            <!--android:inputType="phone"-->
+                            <!--android:padding="10dp"-->
+                            <!--android:textColor="@color/colorAccent"-->
+                            <!--android:textColorHint="@color/colorAccent"-->
+                            <!--android:textSize="16dp" />-->
+                    <!--</android.support.design.widget.TextInputLayout>-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ADCCE2" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/resume"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:gravity="start"
+                            android:hint="@string/resume"
+                            android:inputType="textMultiLine"
+                            android:maxLines="5"
+                            android:textColor="@color/colorAccent"
+                            android:textColorHint="@color/colorAccent" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ADCCE2" />
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/btn_sign_up"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_16"
+                        android:background="@drawable/button2_style"
+                        android:padding="@dimen/padding_14"
+                        android:text="@string/sihnup" />
+
+                    <Button
+                        android:id="@+id/btn_sign_in"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:text="@string/btn_link_to_login"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_profile"
+                    android:layout_width="@dimen/height_150"
+                    android:layout_height="@dimen/height_150"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/am_worker"
+                    app:civ_border_color="@color/colorAccent"
+                    app:civ_border_width="3dp" />
+            </FrameLayout>
+        </android.support.v7.widget.CardView>
+
+    </FrameLayout>
+
+</ScrollView>
+

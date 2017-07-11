@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardUseCompatPadding="true">
+
+    <!--   Recycler View Item Row   -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <RatingBar
+                android:id="@+id/profile_rate"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/d2dp"
+                android:numStars="5"
+                android:paddingTop="3dp"
+                android:rating="2.5"
+                android:stepSize=".1"/>
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/am_worker" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d2dp"
+            android:background="@color/colorAccent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_14">
+
+            <TextView
+                android:id="@+id/txt_client_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="رائف عبدالرؤوف عبدالرحمن احمد"
+                android:textSize="@dimen/txt_20sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <TableRow android:gravity="right">
+
+                    <TextView
+                        android:id="@+id/txt_job"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingRight="8dp"
+                        android:text="المهنة: كهرباء عام" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_action_articles" />
+                </TableRow>
+
+                <TableRow android:gravity="right">
+
+                    <TextView
+                        android:id="@+id/txt_place"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingRight="8dp"
+                        android:text="اليمن  صنعاء" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/place" />
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

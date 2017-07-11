@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="3dp"
+    card_view:cardCornerRadius="@dimen/card_album_radius"
+    card_view:cardElevation="5dp">
+
+    <LinearLayout
+        android:id="@+id/item_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_14">
+
+            <!--<ImageView-->
+            <!--android:id="@+id/imageView_item_main"-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:padding="5dp"-->
+            <!--android:src="@drawable/c1" />-->
+
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:padding="@dimen/pad_5dp"
+                android:src="@drawable/arrow" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/specialty_item_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="هندسة كهربائية"
+                    android:textColor="@color/about_text_color"
+                    android:textSize="@dimen/txt_20sp" />
+
+                <!--<TextView-->
+                <!--android:id="@+id/textView2_item_main"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="22 new"-->
+                <!--android:textColor="@color/colorAccent"-->
+                <!--android:textSize="@dimen/txt_12sp" />-->
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
