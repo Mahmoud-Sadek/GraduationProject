@@ -116,22 +116,22 @@ public class CompleteRegistrationActivity extends AppCompatActivity {
 
         if (notes.isEmpty() || notes.length() < 7) {
             inputNotes.setError("enter valid Notes");
-            Toast.makeText(CompleteRegistrationActivity.this, "Notes is not right", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CompleteRegistrationActivity.this, R.string.notes_error, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             inputNotes.setError(null);
         }
 
         if (male.equals(null)) {
-            Toast.makeText(CompleteRegistrationActivity.this, "Choose Your Gender", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CompleteRegistrationActivity.this, R.string.gender_error, Toast.LENGTH_SHORT).show();
             valid = false;
         }
         if (specialty.equals(null)) {
-            Toast.makeText(CompleteRegistrationActivity.this, "Choose Your Specialty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CompleteRegistrationActivity.this, R.string.specialty_error, Toast.LENGTH_SHORT).show();
             valid = false;
         }
         if (subSpeciality.equals(null)) {
-            Toast.makeText(CompleteRegistrationActivity.this, "Choose Your Specialty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CompleteRegistrationActivity.this, R.string.specialt_error, Toast.LENGTH_SHORT).show();
             valid = false;
         }
         return valid;

@@ -34,7 +34,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/am_worker" />
+                android:src="@drawable/am_worker"
+                android:contentDescription="@string/user"/>
         </FrameLayout>
 
         <View
@@ -53,7 +54,6 @@
                 android:id="@+id/txt_client_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="رائف عبدالرؤوف عبدالرحمن احمد"
                 android:textSize="@dimen/txt_20sp" />
 
             <TableLayout
@@ -68,13 +68,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
-                        android:paddingRight="8dp"
-                        android:text="المهنة: كهرباء عام" />
+                        android:paddingRight="8dp"/>
 
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/ic_action_articles" />
+                        android:src="@drawable/ic_action_articles"
+                        android:contentDescription="@string/job"/>
                 </TableRow>
 
                 <TableRow android:gravity="right">
@@ -84,13 +84,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
-                        android:paddingRight="8dp"
-                        android:text="اليمن  صنعاء" />
+                        android:paddingRight="8dp"/>
 
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/place" />
+                        android:src="@drawable/place"
+                        android:contentDescription="@string/place"/>
                 </TableRow>
             </TableLayout>
 

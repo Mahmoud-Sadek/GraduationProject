@@ -121,32 +121,32 @@ public class SettingsActivity extends AppCompatActivity {
         user = new User(phone, address, country, city, name);
 
         if (name.isEmpty() || name.length() < 3) {
-            inputName.setError("at least 3 characters");
-            Toast.makeText(SettingsActivity.this, "User Name is not right", Toast.LENGTH_SHORT).show();
+            inputName.setError(getString(R.string.error_chars));
+            Toast.makeText(SettingsActivity.this, R.string.name_error, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             inputName.setError(null);
         }
         if (address.isEmpty() || address.length() < 3) {
-            inputAddress.setError("at least 3 characters");
-            Toast.makeText(SettingsActivity.this, "Address is not right", Toast.LENGTH_SHORT).show();
+            inputAddress.setError(getString(R.string.error_chars));
+            Toast.makeText(SettingsActivity.this, R.string.address_error, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             inputAddress.setError(null);
         }
         if (phone.isEmpty() || !Patterns.PHONE.matcher(phone).matches()) {
-            inputPhone.setError("enter valid Phone Number");
-            Toast.makeText(SettingsActivity.this, "Phone Number is not right", Toast.LENGTH_SHORT).show();
+            inputPhone.setError(getString(R.string.phone_valid));
+            Toast.makeText(SettingsActivity.this, R.string.phone_erro, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             inputPhone.setError(null);
         }
         if (country.equals("")) {
-            Toast.makeText(SettingsActivity.this, "Choose Your Country", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SettingsActivity.this, R.string.contry_error, Toast.LENGTH_SHORT).show();
             valid = false;
         }
         if (city.equals("")) {
-            Toast.makeText(SettingsActivity.this, "Choose Your City", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SettingsActivity.this, R.string.city_error, Toast.LENGTH_SHORT).show();
             valid = false;
         }
         return valid;
@@ -168,7 +168,7 @@ public class SettingsActivity extends AppCompatActivity {
                         progressDialog.cancel();
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            Toast.makeText(SettingsActivity.this, jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                            Toast.makeText(SettingsActivity.this, jsonObject.getString(getString(R.string.message)), Toast.LENGTH_LONG).show();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

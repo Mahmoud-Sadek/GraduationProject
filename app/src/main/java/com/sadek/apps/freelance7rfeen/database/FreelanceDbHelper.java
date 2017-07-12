@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import com.sadek.apps.freelance7rfeen.R;
+
 
 /**
  * Created by Mahmoud Sadek on 3/11/2017.
@@ -47,9 +49,9 @@ public class FreelanceDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         try {
             sqLiteDatabase.execSQL(CREATE_TABLE);
-            Toast.makeText(context, "database CREATED", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, R.string.database_created, Toast.LENGTH_SHORT).show();
         } catch (SQLException e) {
-            Toast.makeText(context, "Sorry there is Error in create your database \n" + e, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getString(R.string.database_error) + e, Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -60,7 +62,7 @@ public class FreelanceDbHelper extends SQLiteOpenHelper {
             sqLiteDatabase.execSQL(DROP_TABLE);
             onCreate(sqLiteDatabase);
         } catch (SQLException e) {
-            Toast.makeText(context, "Sorry there is Error in upgrade your database \n" + e, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, context.getString(R.string.database_upgrade_error) + e, Toast.LENGTH_SHORT).show();
         }
     }
 }

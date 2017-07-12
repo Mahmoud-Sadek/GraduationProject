@@ -64,7 +64,7 @@ public class ChooseLocationActivity extends FragmentActivity implements OnMapRea
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            Toast.makeText(this, "GPS is Enabled in your device", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.gps_open, Toast.LENGTH_SHORT).show();
         } else {
             showGPSDisabledAlertToUser();
         }
@@ -173,7 +173,7 @@ public class ChooseLocationActivity extends FragmentActivity implements OnMapRea
         if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             onConnected(null);
         } else {
-            Toast.makeText(ChooseLocationActivity.this, "No Permitions Granted", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ChooseLocationActivity.this, R.string.no_permission, Toast.LENGTH_SHORT).show();
         }
     }
 

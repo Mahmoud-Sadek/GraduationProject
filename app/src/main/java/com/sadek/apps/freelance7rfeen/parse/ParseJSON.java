@@ -214,7 +214,6 @@ public class ParseJSON {
                 Requests request = new Requests(requestObject.getInt("request_id") + "", requestObject.getInt(KEY_USER_RECIVED_ID) + "", userInfoObject.getString(KEY__FAV_NAME), requestObject.getString(KEY_REQUEST_CONTENT),
                         requestObject.getInt(KEY_REQUEST_STATUS) + "", requestObject.getString(KEY_END_DATE), requestObject.getString(KEY_REQUEST_ADDRESS),
                         requestObject.getString(KEY_REQUEST_PHONE), requestObject.getString(KEY_CREATED_AT));
-                ;
                 requestsList.add(request);
             }
 

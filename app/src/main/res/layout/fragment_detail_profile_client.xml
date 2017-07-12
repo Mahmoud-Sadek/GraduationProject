@@ -34,7 +34,8 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/place" />
+                        android:src="@drawable/place"
+                        android:contentDescription="@string/place"/>
 
                     <TextView
                         android:id="@+id/txt_client_year"
@@ -48,7 +49,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="سنوات الخبرة"
+                        android:text="@string/experience_years"
                         android:textColor="#CCC" />
                 </LinearLayout>
 
@@ -69,7 +70,8 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/ic_action_personal" />
+                        android:src="@drawable/ic_action_personal"
+                        android:contentDescription="@string/profile"/>
 
                     <TextView
                         android:id="@+id/detail_job"
@@ -85,7 +87,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="المهنة"
+                        android:text="@string/jobs"
                         android:textColor="#CCC" />
                 </LinearLayout>
             </LinearLayout>
@@ -111,7 +113,8 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/place" />
+                        android:src="@drawable/place"
+                        android:contentDescription="@string/place"/>
 
                     <TextView
                         android:id="@+id/txt_client_education"
@@ -125,7 +128,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="التعليم"
+                        android:text="@string/learning"
                         android:textColor="#CCC" />
                 </LinearLayout>
 
@@ -146,7 +149,8 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/place" />
+                        android:src="@drawable/place"
+                        android:contentDescription="@string/place"/>
 
                     <TextView
                         android:id="@+id/txt_client_place"
@@ -160,7 +164,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="مكــان الإقامة"
+                        android:text="@string/place_work"
                         android:textColor="#CCC" />
                 </LinearLayout>
             </LinearLayout>
@@ -187,7 +191,8 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/place" />
+                        android:src="@drawable/place"
+                        android:contentDescription="@string/place"/>
 
                     <TextView
                         android:id="@+id/txt_client_talent"
@@ -202,7 +207,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="المهارات"
+                        android:text="@string/skills"
                         android:textColor="#CCC" />
                 </LinearLayout>
 
@@ -223,7 +228,8 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:src="@drawable/place" />
+                        android:src="@drawable/place"
+                        android:contentDescription="@string/place"/>
 
                     <TextView
                         android:id="@+id/txt_client_khebra"
@@ -237,7 +243,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="الخبرات"
+                        android:text="@string/experiences"
                         android:textColor="#CCC" />
                 </LinearLayout>
             </LinearLayout>
@@ -250,7 +256,7 @@
             android:background="@color/colorPrimary"
             android:gravity="center"
             android:padding="4dp"
-            android:text="التقييمات"
+            android:text="@string/rates"
             android:textColor="@color/white"
             android:textSize="20sp" />
 

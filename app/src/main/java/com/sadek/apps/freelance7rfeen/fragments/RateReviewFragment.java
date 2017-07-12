@@ -138,9 +138,9 @@ public class RateReviewFragment extends DialogFragment {
                             jsonObject = new JSONObject(response);
                             String state = jsonObject.getString("message");
                             if (state.equals("done")) {
-                                Toast.makeText(mcontext, "تم تقييم المهني بنجاح", Toast.LENGTH_LONG).show();
+                                Toast.makeText(mcontext, R.string.success_rate, Toast.LENGTH_LONG).show();
                             } else {
-                                Toast.makeText(mcontext, "حدث خطأ ما", Toast.LENGTH_LONG).show();
+                                Toast.makeText(mcontext, R.string.error, Toast.LENGTH_LONG).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

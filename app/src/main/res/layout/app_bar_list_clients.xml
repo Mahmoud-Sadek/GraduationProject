@@ -37,7 +37,8 @@
                     android:paddingBottom="@dimen/pad_20dp"
                     android:paddingTop="@dimen/pad_20dp"
                     android:background="@color/colorPrimary"
-                    app:layout_collapseMode="parallax" />
+                    app:layout_collapseMode="parallax"
+                    android:contentDescription="@string/speciality"/>
                 <!--
                                 <LinearLayout
                                     android:layout_width="wrap_content"

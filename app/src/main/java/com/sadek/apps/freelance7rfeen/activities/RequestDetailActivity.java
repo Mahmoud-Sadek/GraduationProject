@@ -62,7 +62,7 @@ public class RequestDetailActivity extends AppCompatActivity {
             DialogFragment dialog = RateReviewFragment.newInstance(RequestDetailActivity.this);
             dialog.show(RequestDetailActivity.this.getFragmentManager(), "RateReviewFragment");
         }else {
-            Toast.makeText(this, "لا تستطيع تقييم المهني الان!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.cant_rate, Toast.LENGTH_SHORT).show();
         }
     }
 

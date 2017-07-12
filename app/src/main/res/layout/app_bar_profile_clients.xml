@@ -80,7 +80,6 @@
                             android:id="@+id/txt_client_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="سامي محمد محمود"
                             android:textColor="@color/cardview_dark_background"
                             android:textSize="20sp" />
 
@@ -88,7 +87,6 @@
                             android:id="@+id/txt_client_available"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="متاح للطلب"
                             android:textColor="@android:color/holo_green_dark"
                             android:textSize="20sp" />
 
@@ -119,58 +117,6 @@
         <include layout="@layout/content_profile_clients" />
 
     </LinearLayout>
-<!--
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_order"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="275dp"
-        android:layout_marginRight="@dimen/fab_margin_right"
-        android:elevation="6dp"
-        android:src="@drawable/ic_action_articles"
-        android:visibility="invisible"
-        app:backgroundTint="@color/colorPrimary"
-        app:pressedTranslationZ="12dp" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_favorite"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="220dp"
-        android:layout_marginRight="@dimen/fab_margin_right"
-        android:elevation="6dp"
-        android:src="@drawable/ic_action_favorite"
-        android:visibility="invisible"
-        app:backgroundTint="@color/colorPrimary"
-        app:pressedTranslationZ="12dp" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_comment"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="165dp"
-        android:layout_marginRight="@dimen/fab_margin_right"
-        android:elevation="6dp"
-        android:src="@drawable/ic_action_name"
-        android:visibility="invisible"
-        app:backgroundTint="@color/colorPrimary"
-        app:pressedTranslationZ="12dp" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_share"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="100dp"
-        android:layout_marginRight="@dimen/fab_margin_right"
-        android:elevation="6dp"
-        android:src="@drawable/ic_action_share"
-        android:visibility="invisible"
-        app:backgroundTint="@color/colorPrimary"
-        app:pressedTranslationZ="12dp" />-->
 
     <com.nightonke.boommenu.BoomMenuButton
         android:id="@+id/fab"
@@ -184,18 +130,7 @@
         app:bmb_highlightedColor="@android:color/darker_gray"
         app:bmb_normalColor="@android:color/white"
         app:bmb_pieceCornerRadius="2dp"
-        app:bmb_piecePlaceEnum="piecePlace_dot_9_1" />
-    <!--<android.support.design.widget.FloatingActionButton-->
-    <!--android:id="@+id/fab_plus"-->
-    <!--android:layout_width="60dp"-->
-    <!--android:layout_height="60dp"-->
-    <!--android:layout_gravity="bottom|end"-->
-    <!--android:layout_marginBottom="16dp"-->
-    <!--android:layout_marginRight="@dimen/fab_margin_right"-->
-    <!--android:elevation="6dp"-->
-    <!--android:src="@drawable/ic_action_plus"-->
-    <!--app:backgroundTint="@color/colorPrimary"-->
-    <!--app:pressedTranslationZ="12dp" />-->
-
+        app:bmb_piecePlaceEnum="piecePlace_dot_9_1"
+        android:contentDescription="@string/floating"/>
 </android.support.design.widget.CoordinatorLayout>
 

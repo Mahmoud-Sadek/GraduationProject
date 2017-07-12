@@ -108,54 +108,54 @@ public class RegisterAgentActivity extends AppCompatActivity {
         client = new Client(name, email, password, phone, address, country, city);
 
         if (name.isEmpty() || name.length() < 3) {
-            inputName.setError("at least 3 characters");
-            Toast.makeText(RegisterAgentActivity.this, "User Name is not right", Toast.LENGTH_SHORT).show();
+            inputName.setError(getString(R.string.error_chars));
+            Toast.makeText(RegisterAgentActivity.this, R.string.name_error, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             inputName.setError(null);
         }
         if (address.isEmpty() || address.length() < 3) {
-            inputAddress.setError("at least 3 characters");
-            Toast.makeText(RegisterAgentActivity.this, "Address is not right", Toast.LENGTH_SHORT).show();
+            inputAddress.setError(getString(R.string.error_chars));
+            Toast.makeText(RegisterAgentActivity.this, R.string.address_error, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             inputAddress.setError(null);
         }
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            inputEmail.setError("enter a valid email address");
-            Toast.makeText(RegisterAgentActivity.this, "Email is not right", Toast.LENGTH_SHORT).show();
+            inputEmail.setError(getString(R.string.valid_email));
+            Toast.makeText(RegisterAgentActivity.this, R.string.email_error, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             inputEmail.setError(null);
         }
 
         if (password.isEmpty() || password.length() < 7 || password.length() > 14) {
-            inputPass.setError("between 7 and 14 alphanumeric characters");
-            Toast.makeText(RegisterAgentActivity.this, "Password is not right", Toast.LENGTH_SHORT).show();
+            inputPass.setError(getString(R.string.valid_pass));
+            Toast.makeText(RegisterAgentActivity.this, R.string.pass_error, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             inputPass.setError(null);
         }
         if (!repassword.equals(password)) {
-            inputPass.setError("password not match!");
-            Toast.makeText(RegisterAgentActivity.this, "password not match", Toast.LENGTH_SHORT).show();
+            inputPass.setError(getString(R.string.pass_not_match));
+            Toast.makeText(RegisterAgentActivity.this, R.string.pass_not_match, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             inputPass.setError(null);
         }
         if (phone.isEmpty() || !Patterns.PHONE.matcher(phone).matches()) {
-            inputPhone.setError("enter valid Phone Number");
-            Toast.makeText(RegisterAgentActivity.this, "Phone Number is not right", Toast.LENGTH_SHORT).show();
+            inputPhone.setError(getString(R.string.phone_valid));
+            Toast.makeText(RegisterAgentActivity.this, R.string.phone_erro, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             inputPhone.setError(null);
         }
         if (country.equals("")) {
-            Toast.makeText(RegisterAgentActivity.this, "Choose Your Country", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterAgentActivity.this, R.string.contry_error, Toast.LENGTH_SHORT).show();
             valid = false;
         }
         if (city.equals("")) {
-            Toast.makeText(RegisterAgentActivity.this, "Choose Your City", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterAgentActivity.this, R.string.city_error, Toast.LENGTH_SHORT).show();
             valid = false;
         }
         return valid;
@@ -189,7 +189,7 @@ public class RegisterAgentActivity extends AppCompatActivity {
                             finish();
                             progressDialog.dismiss();
                         } else {
-                            Toast.makeText(RegisterAgentActivity.this, "This User Already has Account!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterAgentActivity.this, R.string.user_error, Toast.LENGTH_SHORT).show();
                         }
                         progressDialog.dismiss();
                     }

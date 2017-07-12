@@ -19,5 +19,5 @@
         android:id="@+id/conf_loc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirm Your location" />
+        android:text="@string/confirm_your_location" />
 </LinearLayout>

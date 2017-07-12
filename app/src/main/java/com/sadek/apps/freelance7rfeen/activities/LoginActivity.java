@@ -70,16 +70,16 @@ public class LoginActivity extends AppCompatActivity {
         String password = inputPass.getText().toString().trim();
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            inputEmail.setError("enter valid email address");
-            Toast.makeText(LoginActivity.this, "Email is not right", Toast.LENGTH_SHORT).show();
+            inputEmail.setError(getString(R.string.valid_email));
+            Toast.makeText(LoginActivity.this, R.string.email_error, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             inputEmail.setError(null);
         }
 
         if (password.isEmpty() || password.length() < 7 || password.length() > 14) {
-            inputPass.setError("between 7 and 14 alphanumeric characters");
-            Toast.makeText(LoginActivity.this, "Password is not right", Toast.LENGTH_SHORT).show();
+            inputPass.setError(getString(R.string.valid_pass));
+            Toast.makeText(LoginActivity.this, R.string.pass_error, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {
             inputPass.setError(null);

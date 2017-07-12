@@ -135,7 +135,7 @@ public class OrderFragment extends DialogFragment {
         final String addrs = addrss.getText().toString().trim();
 
         if (TextUtils.isEmpty(cmnt) && TextUtils.isEmpty(phn) && TextUtils.isEmpty(addrs)) {
-            Toast.makeText(mcontext, "اكمل البيانات اولا", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mcontext, R.string.data_not_complete, Toast.LENGTH_SHORT).show();
             return;
         }
         progressDialog = new ProgressDialog(mActivity);
@@ -153,9 +153,9 @@ public class OrderFragment extends DialogFragment {
                             jsonObject = new JSONObject(response);
                             String state = jsonObject.getString("requests");
                             if (state.equals("done")) {
-                                Toast.makeText(mcontext, "تم طلب المهني بنجاح", Toast.LENGTH_LONG).show();
+                                Toast.makeText(mcontext, R.string.order_success, Toast.LENGTH_LONG).show();
                             } else {
-                                Toast.makeText(mcontext, "حدث خطأ ما", Toast.LENGTH_LONG).show();
+                                Toast.makeText(mcontext, R.string.error, Toast.LENGTH_LONG).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -166,7 +166,7 @@ public class OrderFragment extends DialogFragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(mActivity, "افحص الانترنت", Toast.LENGTH_LONG).show();
+                        Toast.makeText(mActivity, R.string.noconnection, Toast.LENGTH_LONG).show();
                         progressDialog.dismiss();
                         progressDialog.dismiss();
                     }

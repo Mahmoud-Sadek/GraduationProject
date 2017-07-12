@@ -36,7 +36,8 @@
                     android:background="@color/colorPrimary"
                     android:fitsSystemWindows="true"
                     android:padding="@dimen/padding_24"
-                    app:layout_collapseMode="parallax" />
+                    app:layout_collapseMode="parallax"
+                    android:contentDescription="@string/sub_specialty"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -51,7 +52,6 @@
                         android:id="@+id/name_sepcialization"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="string backdrop title"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/backdrop_title"
                         android:gravity="bottom|center"

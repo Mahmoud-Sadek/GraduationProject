@@ -32,6 +32,7 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_gravity="center_horizontal"
+                        android:contentDescription="@string/user"
                         android:scaleType="centerCrop"
                         android:src="@drawable/am_user" />
 
@@ -59,7 +60,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="10dp"
-                        android:text="Mahmoud Yahia"
                         android:textColor="#000000" />
 
                     <TextView
@@ -67,8 +67,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="3dp"
-                        android:paddingTop="3dp"
-                        android:text="15 May" />
+                        android:paddingTop="3dp" />
 
                     <TextView
                         android:id="@+id/reviewer_summary"
@@ -77,7 +76,6 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:paddingBottom="3dp"
-                        android:text="this is  perfect doctor \n i recommend him all my friends"
                         android:textColor="#000" />
                 </LinearLayout>
             </LinearLayout>
@@ -94,6 +92,13 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/work_rate"
+                    android:textSize="@dimen/txt_20sp" />
+
                 <RatingBar
                     android:id="@+id/rate_work_prefiction"
                     style="?android:attr/ratingBarStyleSmall"
@@ -104,12 +109,6 @@
                     android:rating="1"
                     android:stepSize=".1" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="جودة العمل"
-                    android:textSize="@dimen/txt_20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -118,6 +117,13 @@
                 android:gravity="right"
                 android:orientation="horizontal"
                 android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/price"
+                    android:textSize="@dimen/txt_20sp" />
 
                 <RatingBar
                     android:id="@+id/rate_work_price"
@@ -129,12 +135,6 @@
                     android:rating="1"
                     android:stepSize=".1" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="السعر"
-                    android:textSize="@dimen/txt_20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -143,6 +143,13 @@
                 android:gravity="right"
                 android:orientation="horizontal"
                 android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/apperance"
+                    android:textSize="@dimen/txt_20sp" />
 
                 <RatingBar
                     android:id="@+id/rate_work_clean"
@@ -154,12 +161,6 @@
                     android:rating="1"
                     android:stepSize=".1" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="مظهر المهني"
-                    android:textSize="@dimen/txt_20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -168,6 +169,13 @@
                 android:gravity="right"
                 android:orientation="horizontal"
                 android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/time"
+                    android:textSize="@dimen/txt_20sp" />
 
                 <RatingBar
                     android:id="@+id/rate_work_completion"
@@ -179,12 +187,6 @@
                     android:rating="1"
                     android:stepSize=".1" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="وقت العمل"
-                    android:textSize="@dimen/txt_20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -193,6 +195,13 @@
                 android:gravity="right"
                 android:orientation="horizontal"
                 android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/clean"
+                    android:textSize="@dimen/txt_20sp" />
 
                 <RatingBar
                     android:id="@+id/rate_work_deadline"
@@ -204,12 +213,6 @@
                     android:rating="1"
                     android:stepSize=".1" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="التسليم"
-                    android:textSize="@dimen/txt_20sp" />
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>

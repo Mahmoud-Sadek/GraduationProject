@@ -9,7 +9,7 @@
         android:id="@+id/user_comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="أكتب تعليقك هنا"
+        android:hint="@string/hint_comment"
         android:padding="10dp" />
 
     <View
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="@dimen/padding_14"
-        android:text="قييم المهني"
+        android:text="@string/rate_worker"
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/padding_24" />
 
@@ -33,27 +33,21 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <!--<RatingBar-->
-            <!--android:id="@+id/rate_work_prefiction"-->
-            <!--style="?android:attr/ratingBarStyleSmall"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:numStars="5"-->
-            <!--android:paddingTop="3dp"-->
-            <!--android:stepSize=".1" />-->
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:padding="5dp"
-            android:id="@+id/rate_work_prefiction"/>
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="جودة العمل"
+            android:text="@string/work_rate"
             android:textSize="@dimen/txt_20sp" />
+
+        <RatingBar
+            android:id="@+id/rate_work_prefiction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:padding="5dp" />
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -63,27 +57,21 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <!--<RatingBar-->
-            <!--android:id="@+id/rate_work_price"-->
-            <!--style="?android:attr/ratingBarStyleSmall"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:numStars="5"-->
-            <!--android:paddingTop="3dp"-->
-            <!--android:stepSize=".1" />-->
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:padding="5dp"
-            android:id="@+id/rate_work_price"/>
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="السعر"
+            android:text="@string/price"
             android:textSize="@dimen/txt_20sp" />
+
+
+        <RatingBar
+            android:id="@+id/rate_work_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:padding="5dp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -93,26 +81,19 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <!--<RatingBar-->
-            <!--android:id="@+id/rate_work_clean"-->
-            <!--style="?android:attr/ratingBarStyleSmall"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:numStars="5"-->
-            <!--android:paddingTop="3dp"-->
-            <!--android:stepSize=".1" />-->
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:padding="5dp"
-            android:id="@+id/rate_work_clean"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="مظهر المهني"
+            android:text="@string/apperance"
             android:textSize="@dimen/txt_20sp" />
+
+        <RatingBar
+            android:id="@+id/rate_work_clean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:padding="5dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -122,27 +103,19 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <!--<RatingBar-->
-            <!--android:id="@+id/rate_work_completion"-->
-            <!--style="?android:attr/ratingBarStyleSmall"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:numStars="5"-->
-            <!--android:paddingTop="3dp"-->
-            <!--android:stepSize=".1" />-->
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:padding="5dp"
-            android:id="@+id/rate_work_completion"/>
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="وقت العمل"
+            android:text="@string/time"
             android:textSize="@dimen/txt_20sp" />
+
+        <RatingBar
+            android:id="@+id/rate_work_completion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:padding="5dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -152,27 +125,19 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <!--<RatingBar-->
-            <!--android:id="@+id/rate_work_deadline"-->
-            <!--style="?android:attr/ratingBarStyleSmall"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:numStars="5"-->
-            <!--android:paddingTop="3dp"-->
-            <!--android:stepSize=".1" />-->
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:padding="5dp"
-            android:id="@+id/rate_work_deadline"/>
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="التسليم"
+            android:text="@string/clean"
             android:textSize="@dimen/txt_20sp" />
+
+        <RatingBar
+            android:id="@+id/rate_work_deadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:padding="5dp" />
     </LinearLayout>
 
     <View

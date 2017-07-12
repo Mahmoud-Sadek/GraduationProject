@@ -33,7 +33,8 @@
                         android:layout_height="60dp"
                         android:layout_gravity="center_horizontal"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/am_user" />
+                        android:src="@drawable/am_user"
+                        android:contentDescription="@string/user"/>
 
                 </LinearLayout>
 
@@ -49,7 +50,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="10dp"
-                        android:text="Mahmoud Yahia"
                         android:textColor="#000000" />
 
                     <TextView
@@ -58,7 +58,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="3dp"
                         android:paddingTop="3dp"
-                        android:text="15 May" />
+                        />
 
                     <TextView
                         android:id="@+id/request_summary"
@@ -67,7 +67,6 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="10dp"
                         android:paddingBottom="3dp"
-                        android:text="this is  perfect doctor \n i recommend him all my friends"
                         android:textColor="#000" />
                 </LinearLayout>
             </LinearLayout>
@@ -90,13 +89,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
-                        android:paddingRight="8dp"
-                        android:text="01020488243" />
+                        android:paddingRight="8dp"/>
 
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@android:drawable/ic_menu_call" />
+                        android:src="@android:drawable/ic_menu_call"
+                        android:contentDescription="@string/call"/>
                 </TableRow>
 
                 <TableRow android:gravity="right">
@@ -106,13 +105,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
-                        android:paddingRight="8dp"
-                        android:text="اليمن  صنعاء" />
+                        android:paddingRight="8dp" />
 
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/place" />
+                        android:src="@drawable/place"
+                        android:contentDescription="@string/place"/>
                 </TableRow>
                 <TableRow android:gravity="right">
 
@@ -127,7 +126,8 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@android:drawable/ic_menu_my_calendar" />
+                        android:src="@android:drawable/ic_menu_my_calendar"
+                        android:contentDescription="@string/end_date"/>
                 </TableRow>
                 <TableRow android:gravity="right">
 
@@ -142,7 +142,8 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@android:drawable/ic_menu_my_calendar" />
+                        android:src="@android:drawable/ic_menu_my_calendar"
+                        android:contentDescription="@string/status"/>
                 </TableRow>
             </TableLayout>
 

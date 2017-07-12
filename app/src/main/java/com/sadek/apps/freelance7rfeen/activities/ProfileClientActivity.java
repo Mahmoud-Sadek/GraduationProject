@@ -336,7 +336,7 @@ public class ProfileClientActivity extends AppCompatActivity implements Material
                         JSONObject jsonObject = null;
                         try {
                             jsonObject = new JSONObject(response);
-                            Toast.makeText(ProfileClientActivity.this, jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                            Toast.makeText(ProfileClientActivity.this, jsonObject.getString(getString(R.string.message)), Toast.LENGTH_LONG).show();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

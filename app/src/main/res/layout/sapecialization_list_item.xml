@@ -26,7 +26,8 @@
                 android:layout_gravity="center_horizontal"
                 android:padding="45dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/c1" />
+                android:src="@drawable/c1"
+                android:contentDescription="@string/speciality"/>
 
             <View
                 android:id="@+id/separator"
@@ -44,7 +45,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center_horizontal"
-                android:text="أطفال"
                 android:padding="@dimen/margin10"
                 android:textSize="18sp"
                 android:textStyle="bold" />

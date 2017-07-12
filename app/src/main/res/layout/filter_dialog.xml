@@ -52,7 +52,8 @@
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
             android:src="@drawable/gps"
-            android:padding="8dp"/>
+            android:padding="8dp"
+            android:contentDescription="@string/gps"/>
     </LinearLayout>
 
     <com.crystal.crystalrangeseekbar.widgets.CrystalSeekbar
