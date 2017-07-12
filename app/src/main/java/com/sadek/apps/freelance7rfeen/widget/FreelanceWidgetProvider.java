@@ -18,32 +18,35 @@ import com.sadek.apps.freelance7rfeen.activities.SubSpecializationActivity;
 
 
 public class FreelanceWidgetProvider extends AppWidgetProvider {
+    public static String EXTRA_WORD =
+            "com.sadek.apps.freelance7rfeen.WORD";
 
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+    @Override
+    public void onUpdate(Context ctxt, AppWidgetManager appWidgetManager,
+                         int[] appWidgetIds) {
+        for (int i = 0; i < appWidgetIds.length; i++) {
+            Intent svcIntent = new Intent(ctxt, WidgetService.class);
 
-        String description = "FreeLance";
+            svcIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetIds[i]);
+            svcIntent.setData(Uri.parse(svcIntent.toUri(Intent.URI_INTENT_SCHEME)));
 
-        for (int appWidgetId : appWidgetIds) {
-            int layoutId = R.layout.widget;
-            RemoteViews views = new RemoteViews(context.getPackageName(), layoutId);
+            RemoteViews widget = new RemoteViews(ctxt.getPackageName(),
+                    R.layout.widget);
 
-            // Content Descriptions for RemoteViews were only added in ICS MR1
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
-                setRemoteContentDescription(views, description);
-            }
+            widget.setRemoteAdapter(appWidgetIds[i], R.id.words,
+                    svcIntent);
 
-            // Create an Intent to launch MainActivity
-            Intent launchIntent = new Intent(context, SplashActivity.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, launchIntent, 0);
-            views.setOnClickPendingIntent(R.id.back, pendingIntent);
+            Intent clickIntent = new Intent(ctxt, SplashActivity.class);
+            PendingIntent clickPI = PendingIntent
+                    .getActivity(ctxt, 0,
+                            clickIntent,
+                            PendingIntent.FLAG_UPDATE_CURRENT);
 
-            // Tell the AppWidgetManager to perform an update on the current app widget
-            appWidgetManager.updateAppWidget(appWidgetId, views);
+            widget.setPendingIntentTemplate(R.id.words, clickPI);
+
+            appWidgetManager.updateAppWidget(appWidgetIds[i], widget);
         }
-    }
 
-    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1)
-    private void setRemoteContentDescription(RemoteViews views, String description) {
-        views.setContentDescription(R.id.back, description);
+        super.onUpdate(ctxt, appWidgetManager, appWidgetIds);
     }
 }

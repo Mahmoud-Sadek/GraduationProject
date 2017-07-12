@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.ContactsContract;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
@@ -40,12 +41,17 @@ import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
+import android.app.LoaderManager;
+import android.content.ContentResolver;
+import android.content.CursorLoader;
+import android.content.Loader;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ListClientsActivity extends AppCompatActivity {
+public class ListClientsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     public static String categorie_id;
     private FlowingDrawer mDrawer;
     static RecyclerView mClientsRecyclerView;
@@ -181,22 +187,41 @@ public class ListClientsActivity extends AppCompatActivity {
     }
 
     private void getStoredData() {
+        getLoaderManager().initLoader(1, null, this);
+
+    }
+
+    private void addDataToLayout() {
+//        dataView.setVisibility(View.VISIBLE);
+//        noConnectionView.setVisibility(View.GONE);
+        ClientsAdapter clientsAdapter = new ClientsAdapter(getBaseContext(), ParseJSON.favoriteList);
+        mClientsRecyclerView.setAdapter(clientsAdapter);
+    }
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         String[] column = {FreelanceDbHelper.UID, FreelanceDbHelper.NAME, FreelanceDbHelper.ADDRESS, FreelanceDbHelper.SKILLS,
                 FreelanceDbHelper.EDUCATION, FreelanceDbHelper.EXPERIENCE, FreelanceDbHelper.PHONE, FreelanceDbHelper.EX_YEARS,
                 FreelanceDbHelper.EVALUATION, FreelanceDbHelper.AVAILABLE, FreelanceDbHelper.GOVERNMENT, FreelanceDbHelper.CITY,
                 FreelanceDbHelper.CARRIER, FreelanceDbHelper.RATE};
-        Cursor cursor = getContentResolver().query(
-                FreelanceContract.FreelanceEntry.CONTENT_URI,   // The content URI of the words table
-                column,                        // The columns to return for each row
-                null,                   // Selection criteria
-                null,                     // Selection criteria
-                null);
-//            Cursor cursor = dbController.get_dataselect();
+        if (id == 1) {
+            return new CursorLoader(ListClientsActivity.this, ContactsContract.Contacts.CONTENT_URI,
+                    column, null, null, null);
+        }
+        return null;
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
 
         List<Favorite> clientProfileList = new ArrayList<Favorite>();
-        if (cursor.moveToFirst()) {
-            do {
-                if (cursor.getInt(11) == Integer.parseInt(categorie_id)) {
+        if (cursor != null && cursor.getCount() > 0) {
+            StringBuilder stringBuilderQueryResult = new StringBuilder("");
+            //cursor.moveToFirst();
+
+            if (cursor.moveToFirst()) {
+                do {
+                    if (cursor.getInt(11) == Integer.parseInt(categorie_id)) {
 
                         String job_name = "", government = "", city = "";
                         for (int j = 0; j < ConstantsFreelance.JOBS_ID1.length; j++) {
@@ -220,22 +245,22 @@ public class ListClientsActivity extends AppCompatActivity {
                                 break;
                             }
                         }
-                    Favorite clientProfile = new Favorite(cursor.getString(1), job_name,government,city,"", Float.parseFloat(cursor.getString(12)));
+                        Favorite clientProfile = new Favorite(cursor.getString(1), job_name, government, city, "", Float.parseFloat(cursor.getString(12)));
 
-                    clientProfileList.add(clientProfile);
-                }
-            } while (cursor.moveToNext());
+                        clientProfileList.add(clientProfile);
+                    }
+                } while (cursor.moveToNext());
+            } else {
+                Toast.makeText(mContext, R.string.noconnection, Toast.LENGTH_SHORT).show();
+            }
         }
+        cursor.close();
         ClientsAdapter clientsAdapter = new ClientsAdapter(getBaseContext(), clientProfileList);
         mClientsRecyclerView.setAdapter(clientsAdapter);
     }
 
-    private void addDataToLayout() {
-//        dataView.setVisibility(View.VISIBLE);
-//        noConnectionView.setVisibility(View.GONE);
-        ClientsAdapter clientsAdapter = new ClientsAdapter(getBaseContext(), ParseJSON.favoriteList);
-        mClientsRecyclerView.setAdapter(clientsAdapter);
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+
     }
-
-
 }

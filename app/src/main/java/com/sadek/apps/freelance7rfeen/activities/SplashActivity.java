@@ -14,7 +14,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sadek.apps.freelance7rfeen.R;
+import com.sadek.apps.freelance7rfeen.model.Speciality;
 import com.sadek.apps.freelance7rfeen.utils.ConstantsFreelance;
+import com.sadek.apps.freelance7rfeen.widget.FreelanceWidgetProvider;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 
 public class SplashActivity extends FragmentActivity {
@@ -68,6 +75,8 @@ public class SplashActivity extends FragmentActivity {
         appSlogan.startAnimation(animation);
     }
 
+    List<Speciality> Specialtie;
+
     private void endSplash() {
         animation = AnimationUtils.loadAnimation(this,
                 R.anim.logo_animation_back);
@@ -84,20 +93,31 @@ public class SplashActivity extends FragmentActivity {
         animation.setAnimationListener(new AnimationListener() {
             @Override
             public void onAnimationEnd(Animation arg0) {
-                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                Intent intent;
-                if (sp.getInt(ConstantsFreelance.USER_TYPE, 3) == 0) {
-                    intent = new Intent(getApplicationContext(),
-                            SpecializationActivity.class);
-                } else if (sp.getInt(ConstantsFreelance.USER_TYPE, 3) == 1) {
-                    intent = new Intent(getApplicationContext(),
-                            SpecializationActivity.class);
-                } else {
-                    intent = new Intent(getApplicationContext(),
-                            LoginActivity.class);
-                }
+                insertData();
+                int position = getIntent().getIntExtra(FreelanceWidgetProvider.EXTRA_WORD, 100);
+                if (position != 100) {
+                    SubSpecializationActivity.categorie = Specialtie.get(position);
+                    SubSpecializationActivity.categoryNum = position;
+                    Intent n = new Intent(getBaseContext(), SubSpecializationActivity.class);
+                    n.addFlags(FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(n);
 
-                startActivity(intent);
+                } else {
+                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    Intent intent;
+                    if (sp.getInt(ConstantsFreelance.USER_TYPE, 3) == 0) {
+                        intent = new Intent(getApplicationContext(),
+                                SpecializationActivity.class);
+                    } else if (sp.getInt(ConstantsFreelance.USER_TYPE, 3) == 1) {
+                        intent = new Intent(getApplicationContext(),
+                                SpecializationActivity.class);
+                    } else {
+                        intent = new Intent(getApplicationContext(),
+                                LoginActivity.class);
+                    }
+
+                    startActivity(intent);
+                }
                 finish();
             }
 
@@ -117,4 +137,10 @@ public class SplashActivity extends FragmentActivity {
         // Do nothing
     }
 
+    private void insertData() {
+        Specialtie = new ArrayList<>();
+        for (int i = 0; i < ConstantsFreelance.SPECIALTY_NAME.length; i++) {
+            Specialtie.add(new Speciality(ConstantsFreelance.SPECIALTY_NAME[i], ConstantsFreelance.SPECIALTY_IMAGE[i]));
+        }
+    }
 }
