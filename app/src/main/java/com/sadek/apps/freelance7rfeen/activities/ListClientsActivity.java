@@ -70,7 +70,7 @@ public class ListClientsActivity extends AppCompatActivity implements LoaderMana
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("نجار");
+        setTitle("");
         initCollapsingToolbar();
         mContext = getBaseContext();
         mDrawer = (FlowingDrawer) findViewById(R.id.drawerlayout);
@@ -165,7 +165,7 @@ public class ListClientsActivity extends AppCompatActivity implements LoaderMana
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(ListClientsActivity.this, getString(R.string.check_network), Toast.LENGTH_LONG).show();
                         Snackbar.make(mDrawer, getString(R.string.check_network), Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
+                                .setAction(R.string.action, null).show();
 //                        dataView.setVisibility(View.GONE);
 //                        noConnectionView.setVisibility(View.VISIBLE);
 //                        stateTxt.setText(getString(R.string.noconnection));
@@ -205,7 +205,7 @@ public class ListClientsActivity extends AppCompatActivity implements LoaderMana
                 FreelanceDbHelper.EVALUATION, FreelanceDbHelper.AVAILABLE, FreelanceDbHelper.GOVERNMENT, FreelanceDbHelper.CITY,
                 FreelanceDbHelper.CARRIER, FreelanceDbHelper.RATE};
         if (id == 1) {
-            return new CursorLoader(ListClientsActivity.this, ContactsContract.Contacts.CONTENT_URI,
+            return new CursorLoader(ListClientsActivity.this, FreelanceContract.FreelanceEntry.CONTENT_URI,
                     column, null, null, null);
         }
         return null;

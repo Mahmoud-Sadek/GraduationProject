@@ -139,7 +139,7 @@ public class FavoriteActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(FavoriteActivity.this, getString(R.string.check_network), Toast.LENGTH_LONG).show();
                         Snackbar.make(drawer, getString(R.string.check_network), Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
+                                .setAction(R.string.action, null).show();
                         dataView.setVisibility(View.GONE);
                         noConnectionView.setVisibility(View.VISIBLE);
                         stateTxt.setText(getString(R.string.noconnection));

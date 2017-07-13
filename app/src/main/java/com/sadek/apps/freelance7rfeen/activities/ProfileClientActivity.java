@@ -174,89 +174,6 @@ public class ProfileClientActivity extends AppCompatActivity implements Material
         });
     }
 
-//    FloatingActionButton fab_favorite, fab_share, fab_comment, fab_plus, fab_order;
-//    Animation fabOpen, fabClose, fabRClockwise, fabRAntiClockwise;
-//    boolean isOpen = false;
-
-/*
-    private void fabButtons() {
-        fab_plus = (FloatingActionButton) findViewById(R.id.fab_plus);
-        fab_favorite = (FloatingActionButton) findViewById(R.id.fab_favorite);
-        fab_share = (FloatingActionButton) findViewById(R.id.fab_share);
-        fab_comment = (FloatingActionButton) findViewById(R.id.fab_comment);
-        fab_order = (FloatingActionButton) findViewById(R.id.fab_order);
-
-
-        fabOpen = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
-        fabClose = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
-        fabRClockwise = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_clockwise);
-        fabRAntiClockwise = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_anticlockwise);
-
-        fab_plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //closed
-                if (isOpen) {
-                    fab_favorite.startAnimation(fabClose);
-                    fab_share.startAnimation(fabClose);
-                    fab_comment.startAnimation(fabClose);
-                    fab_order.startAnimation(fabClose);
-                    fab_plus.startAnimation(fabRAntiClockwise);
-
-                    fab_favorite.setClickable(false);
-                    fab_share.setClickable(false);
-                    fab_comment.setClickable(false);
-                    fab_order.setClickable(false);
-                    isOpen = false;
-                }
-                //opened
-                else {
-                    fab_favorite.startAnimation(fabOpen);
-                    fab_share.startAnimation(fabOpen);
-                    fab_comment.startAnimation(fabOpen);
-                    fab_order.startAnimation(fabOpen);
-                    fab_plus.startAnimation(fabRClockwise);
-
-                    fab_favorite.setClickable(true);
-                    fab_share.setClickable(true);
-                    fab_comment.setClickable(true);
-                    fab_order.setClickable(true);
-                    isOpen = true;
-                    //
-                    fab_favorite.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            addToFavorite();
-                        }
-                    });
-                    fab_share.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            String number = ParseJSON.clientProfile.getPhone();
-                            Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                            callIntent.setData(Uri.parse("tel:" + number));
-                            startActivity(callIntent);
-                        }
-                    });
-                    fab_comment.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Toast.makeText(ProfileClientActivity.this, "go to comments activity", Toast.LENGTH_LONG).show();
-                        }
-                    });
-                    fab_order.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            checkToOrder();
-                        }
-                    });
-
-                }
-            }
-        });
-
-    }
-*/
 
 
     private static final String JSON_URL_check_order = ConstantsFreelance.SERVER + "/check_request?";
@@ -277,15 +194,15 @@ public class ProfileClientActivity extends AppCompatActivity implements Material
                             jsonObject = new JSONObject(response);
                             String state = jsonObject.getString("show_modal");
                             OrderFragment.mActivity = ProfileClientActivity.this;
-                            if (state.equals("order")) {
-                                OrderFragment.btnTxt = "إطلب";
-                                OrderFragment.message = "أكمل البيانات ثم إضغط اطلب لتتمكن من طلب المهني";
-                            } else if (state.equals("his_self") || state.equals("not_avilable")) {
-                                OrderFragment.message = "لا يمكنك طلب هذا الحرفي";
-                                OrderFragment.btnTxt = "تم";
-                            } else if (state.equals("rate_one")) {
-                                OrderFragment.message = "عليك تقييم مهني قبل انت تطلب";
-                                OrderFragment.btnTxt = "تقييم";
+                            if (state.equals(getString(R.string.ordr))) {
+                                OrderFragment.btnTxt = getString(R.string.order);
+                                OrderFragment.message = getString(R.string.fill_details);
+                            } else if (state.equals(getString(R.string.his_self)) || state.equals(getString(R.string.not_avalb))) {
+                                OrderFragment.message = getString(R.string.cant_order);
+                                OrderFragment.btnTxt = getString(R.string.done);
+                            } else if (state.equals(getString(R.string.rate_one))) {
+                                OrderFragment.message = getString(R.string.rate_first);
+                                OrderFragment.btnTxt = getString(R.string.rate);
                                 JSONArray request = jsonObject.getJSONArray("requestId");
                                 OrderFragment.meh_id = request.getJSONObject(0).getInt("request_id");
                             }
@@ -367,11 +284,6 @@ public class ProfileClientActivity extends AppCompatActivity implements Material
     }
 
     public void initCollapsingToolbar() {
-//        try {
-//            Picasso.with(this).load(R.drawable.am_worker).into((ImageView) findViewById(R.id.backdrop));
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
 
         final CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
@@ -390,7 +302,7 @@ public class ProfileClientActivity extends AppCompatActivity implements Material
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if (scrollRange + verticalOffset == 0) {
-                    collapsingToolbar.setTitle("نجار");
+                    collapsingToolbar.setTitle("");
                     isShow = true;
                 } else if (isShow) {
                     collapsingToolbar.setTitle(" ");
@@ -504,10 +416,10 @@ public class ProfileClientActivity extends AppCompatActivity implements Material
         name.setText(clientProfile.getName());
 
         if (clientProfile.getAvailable() == 1) {
-            available.setText("متاح للطلب");
+            available.setText(R.string.available);
             available.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
         } else {
-            available.setText("غير متاح للطلب");
+            available.setText(R.string.not_available);
             available.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
         }
         RatingBar review = (RatingBar) findViewById(R.id.profile_rate);
@@ -517,7 +429,7 @@ public class ProfileClientActivity extends AppCompatActivity implements Material
     public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 //        Drawable tabs[] = {getResources().getDrawable(R.drawable.unshipped), (getResources().getDrawable(R.drawable.shipped)), (getResources().getDrawable(R.drawable.profile))};
 
-        String tabs[] = {"التفاصيل"};
+        String tabs[] = {getString(R.string.detail)};
 
         public ViewPagerAdapter(FragmentManager fm) {
             super(fm);

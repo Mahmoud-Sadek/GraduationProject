@@ -157,7 +157,7 @@ public class MapsActivity extends FragmentActivity implements
                 }
                 Address add = list.get(0);
                 MarkerOptions markerOptions = new MarkerOptions()
-                        .position(latLng).title("Taped Location");
+                        .position(latLng).title(getString(R.string.tap));
                 mMap.addMarker(markerOptions);
             }
         });

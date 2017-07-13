@@ -199,7 +199,7 @@ public class RegisterAgentActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(RegisterAgentActivity.this,   getString(R.string.check_network), Toast.LENGTH_LONG).show();
                         Snackbar.make(mRegisterBtn, getString(R.string.check_network), Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
+                                .setAction(R.string.action, null).show();
                         progressDialog.dismiss();
                         progressDialog.dismiss();
                     }

@@ -100,7 +100,7 @@ public class OrderFragment extends DialogFragment {
         addrss.setText(ParseJSON.clientProfile.getAddress());
         phone.setText(ParseJSON.clientProfile.getPhone());
 
-        if (btnTxt.equals("إطلب")){
+        if (btnTxt.equals(getString(R.string.order))){
             rootView.findViewById(R.id.liner_order).setVisibility(View.VISIBLE);
         }
 
@@ -111,11 +111,11 @@ public class OrderFragment extends DialogFragment {
                 .setPositiveButton(btnTxt, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        if (btnTxt.equals("إطلب")) {
+                        if (btnTxt.equals(getString(R.string.order))) {
                             order();
-                        } else if (btnTxt.equals("تم")) {
+                        } else if (btnTxt.equals(getString(R.string.done))) {
                             OrderFragment.this.getDialog().cancel();
-                        } else if (btnTxt.equals("تقييم")) {
+                        } else if (btnTxt.equals(getString(R.string.rate))) {
                             startActivity(new Intent(mcontext, RequestDetailActivity.class));
                             RequestDetailActivity.request_id = meh_id+"";
                             mActivity.finish();
@@ -152,7 +152,7 @@ public class OrderFragment extends DialogFragment {
                         try {
                             jsonObject = new JSONObject(response);
                             String state = jsonObject.getString("requests");
-                            if (state.equals("done")) {
+                            if (state.equals(getString(R.string.done))) {
                                 Toast.makeText(mcontext, R.string.order_success, Toast.LENGTH_LONG).show();
                             } else {
                                 Toast.makeText(mcontext, R.string.error, Toast.LENGTH_LONG).show();

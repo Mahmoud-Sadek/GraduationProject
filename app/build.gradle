@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'graduate'
             keyPassword '2m2m3s7917A'
-            storeFile file('E:/course/Android/Keys/sadek.jks')
+            storeFile file('E:/course/Android/Projests/GraduationProject/graduate.jks')
             storePassword '2m2m3s7917A'
         }
     }
@@ -24,8 +24,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        debug {
             signingConfig signingConfigs.config
         }
     }

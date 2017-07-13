@@ -61,7 +61,7 @@ public class CompleteRegistrationActivity extends AppCompatActivity {
             }
         });
 
-        inputSpecialty.initializeStringValues(ConstantsFreelance.SPECIALTY_NAME, "المهنة الرئيسة");
+        inputSpecialty.initializeStringValues(ConstantsFreelance.SPECIALTY_NAME, getString(R.string.main_job));
         inputSpecialty.setSpinnerEventsListener(new CustomSpinner.OnSpinnerEventsListener() {
             @Override
             public void onSpinnerOpened() {
@@ -71,10 +71,10 @@ public class CompleteRegistrationActivity extends AppCompatActivity {
             @Override
             public void onSpinnerClosed() {
                 specialty = ConstantsFreelance.SPECIALTY_ID[inputSpecialty.getSelectedItemPosition()] + "";
-                inputSubSpecialty.initializeStringValues(ConstantsFreelance.JOBS_NAMES[inputSpecialty.getSelectedItemPosition()], "المهنة");
+                inputSubSpecialty.initializeStringValues(ConstantsFreelance.JOBS_NAMES[inputSpecialty.getSelectedItemPosition()], getString(R.string.job_));
             }
         });
-        inputSubSpecialty.initializeStringValues(ConstantsFreelance.JOBS_NAMES[0], "المهنة");
+        inputSubSpecialty.initializeStringValues(ConstantsFreelance.JOBS_NAMES[0], getString(R.string.job_));
         inputSubSpecialty.setSpinnerEventsListener(new CustomSpinner.OnSpinnerEventsListener() {
             @Override
             public void onSpinnerOpened() {
@@ -86,7 +86,7 @@ public class CompleteRegistrationActivity extends AppCompatActivity {
                 subSpeciality = ConstantsFreelance.JOBS_ID1[inputSpecialty.getSelectedItemPosition()][inputSubSpecialty.getSelectedItemPosition()] + "";
             }
         });
-        inputMale.initializeStringValues(getResources().getStringArray(R.array.male_array), "الجنس");
+        inputMale.initializeStringValues(getResources().getStringArray(R.array.male_array), getString(R.string.gender));
         inputMale.setSpinnerEventsListener(new CustomSpinner.OnSpinnerEventsListener() {
             @Override
             public void onSpinnerOpened() {
@@ -171,7 +171,7 @@ public class CompleteRegistrationActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(CompleteRegistrationActivity.this, getString(R.string.check_network), Toast.LENGTH_LONG).show();
                         Snackbar.make(mRegisterBtn, getString(R.string.check_network), Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
+                                .setAction(R.string.action, null).show();
                         progressDialog.dismiss();
                         progressDialog.dismiss();
                     }

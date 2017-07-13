@@ -97,7 +97,7 @@ public class RateReviewFragment extends DialogFragment {
         /* Pass null as the parent view because its going in the dialog layout*/
         builder.setView(myView)
                 /* Add action buttons */
-                .setPositiveButton("تقييم", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.rate, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         RateOrder();
@@ -137,7 +137,7 @@ public class RateReviewFragment extends DialogFragment {
                         try {
                             jsonObject = new JSONObject(response);
                             String state = jsonObject.getString("message");
-                            if (state.equals("done")) {
+                            if (state.equals(getString(R.string.done))) {
                                 Toast.makeText(mcontext, R.string.success_rate, Toast.LENGTH_LONG).show();
                             } else {
                                 Toast.makeText(mcontext, R.string.error, Toast.LENGTH_LONG).show();
