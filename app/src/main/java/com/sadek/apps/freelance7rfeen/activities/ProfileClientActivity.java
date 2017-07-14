@@ -126,7 +126,7 @@ public class ProfileClientActivity extends AppCompatActivity implements Material
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("نجار");
+        setTitle("");
         initCollapsingToolbar();
         mContext = getBaseContext();
         mDrawer = (FlowingDrawer) findViewById(R.id.drawerlayout);

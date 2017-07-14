@@ -62,7 +62,7 @@ public class RegisterAgentActivity extends AppCompatActivity {
             }
         });
 
-        inputCity.initializeStringValues(ConstantsFreelance.CITY_NAMES[0], "المدينة");
+        inputCity.initializeStringValues(ConstantsFreelance.CITY_NAMES[0], getString(R.string.city));
         inputCity.setSpinnerEventsListener(new CustomSpinner.OnSpinnerEventsListener() {
             @Override
             public void onSpinnerOpened() {
@@ -74,7 +74,7 @@ public class RegisterAgentActivity extends AppCompatActivity {
                 city = ConstantsFreelance.CITY_IDS[inputCountry.getSelectedItemPosition()][inputCity.getSelectedItemPosition()]+"";
             }
         });
-        inputCountry.initializeStringValues(ConstantsFreelance.GOVERNMENT_NAMES, "المحافظة");
+        inputCountry.initializeStringValues(ConstantsFreelance.GOVERNMENT_NAMES, getString(R.string.government));
         inputCountry.setSpinnerEventsListener(new CustomSpinner.OnSpinnerEventsListener() {
             @Override
             public void onSpinnerOpened() {
@@ -84,7 +84,7 @@ public class RegisterAgentActivity extends AppCompatActivity {
             @Override
             public void onSpinnerClosed() {
                 country = ConstantsFreelance.GOVERNMENT_IDS[inputCountry.getSelectedItemPosition()]+"";
-                inputCity.initializeStringValues(ConstantsFreelance.CITY_NAMES[inputCountry.getSelectedItemPosition()], "المدينة");
+                inputCity.initializeStringValues(ConstantsFreelance.CITY_NAMES[inputCountry.getSelectedItemPosition()], getString(R.string.city));
             }
         });
     }

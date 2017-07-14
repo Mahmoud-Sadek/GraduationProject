@@ -115,7 +115,7 @@ public class CompleteRegistrationActivity extends AppCompatActivity {
         String notes = inputNotes.getText().toString().trim();
 
         if (notes.isEmpty() || notes.length() < 7) {
-            inputNotes.setError("enter valid Notes");
+            inputNotes.setError(getString(R.string.valid_notes));
             Toast.makeText(CompleteRegistrationActivity.this, R.string.notes_error, Toast.LENGTH_SHORT).show();
             valid = false;
         } else {

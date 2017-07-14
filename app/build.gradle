@@ -4,9 +4,9 @@ android {
     signingConfigs {
         config {
             keyAlias 'graduate'
-            keyPassword '2m2m3s7917A'
-            storeFile file('E:/course/Android/Projests/GraduationProject/graduate.jks')
-            storePassword '2m2m3s7917A'
+            keyPassword 'graduate'
+            storeFile file('graduate.jks')
+            storePassword 'graduate'
         }
     }
     compileSdkVersion 25

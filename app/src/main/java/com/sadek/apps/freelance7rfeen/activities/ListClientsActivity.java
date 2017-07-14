@@ -113,7 +113,7 @@ public class ListClientsActivity extends AppCompatActivity implements LoaderMana
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if (scrollRange + verticalOffset == 0) {
-                    collapsingToolbar.setTitle("نجار");
+                    collapsingToolbar.setTitle("");
                     isShow = true;
                 } else if (isShow) {
                     collapsingToolbar.setTitle(" ");
