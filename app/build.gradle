@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'graduates'
             keyPassword 'graduates'
-            storeFile file('graduates.jks')
+            storeFile file('../graduates.jks')
             storePassword 'graduates'
         }
     }
