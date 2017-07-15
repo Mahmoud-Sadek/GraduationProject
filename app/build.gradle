@@ -3,10 +3,10 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         config {
-            keyAlias 'graduate'
-            keyPassword 'graduate'
-            storeFile file('graduate.jks')
-            storePassword 'graduate'
+            keyAlias 'graduates'
+            keyPassword 'graduates'
+            storeFile file('graduates.jks')
+            storePassword 'graduates'
         }
     }
     compileSdkVersion 25
